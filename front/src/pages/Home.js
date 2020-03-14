@@ -9,22 +9,22 @@ const Home = (props) => {
     return <h1>Loading...</h1>
   }
 
-  return(
+  return (
     <React.Fragment>
       <div className="Frame">
-      <div className="Image__container">
-        <img alt="close icon" className="Image__container--image" src={props.currentImage.url}/>
+        <div className="Image__container">
+          <img alt="close icon" className="Image__container--image" src={props.currentImage.url} />
+        </div>
       </div>
-    </div>
 
-    <div className="Button__container">
-      <div className="Button__item" onClick={props.onDelete}>
-        <img alt="love icon" src={closeIcon} />
+      <div className="Button__container">
+        <div className="Button__item" onClick={props.onDelete}>
+          <img alt="love icon" src={closeIcon} />
+        </div>
+        <div className="Button__item" onClick={props.onLike}>
+          <img alt="love icon" src={props.iconFilled ? favoriteFilledIcon : favoriteIcon} />
+        </div>
       </div>
-      <div className="Button__item" onClick={props.onLike}>
-        <img alt="love icon" src={props.iconFilled ? favoriteFilledIcon : favoriteIcon} />
-      </div>
-    </div>
     </React.Fragment>
   )
 }

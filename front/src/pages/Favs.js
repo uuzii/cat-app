@@ -61,7 +61,7 @@ class Favs extends React.Component {
 
   render() {
     if (this.state.list.length === 0) {
-      return <h1>you dont have favorites yet!</h1>
+      return <h1>You dont have favorites yet!</h1>
     }
 
     return (
