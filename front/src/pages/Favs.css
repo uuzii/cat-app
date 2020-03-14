@@ -1,0 +1,33 @@
+.Grid {}
+.Row {
+  display: grid;
+  grid-template-columns: 160px 160px 160px;
+}
+.Row__item {
+  width: 148px;
+  height: 148px;
+  background-color: whitesmoke;
+  border: 6px white solid;
+}
+.Row__item--image {
+  width: 148px;
+  height: 148px;
+  object-fit: cover;
+}
+.Row__item__cross--container {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5px;
+  position: relative;
+  top: 6px;
+  margin-bottom: -20px;
+}
+.Row__item__cross--button {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  text-align: center;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+}
