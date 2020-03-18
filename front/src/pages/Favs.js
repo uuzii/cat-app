@@ -5,14 +5,12 @@ import './Favs.css'
 class Favs extends React.Component {
   state = {
     list: [],
-    currentId: null,
     currentIndex: null
   }
 
   componentDidMount() {
     this.fetchImages()
     this.setState({
-      currentId: null,
       currentIndex: null
     })
   }
@@ -31,16 +29,15 @@ class Favs extends React.Component {
         list: payload.images
       })
     } catch (error) {
-      
+      console.error(error)
     }
   }
 
-  handleDeleteFav = async e => {
-    await this.setState({
-      currentId: e.target.dataset.id,
+  handleDeleteFav = e => {
+    const deleteUrl = `${process.env.REACT_APP_URL_BASE}/fav/${e.target.dataset.id}`
+    this.setState({
       currentIndex: e.target.dataset.index
     })
-    const deleteUrl = `${process.env.REACT_APP_URL_BASE}/fav/${this.state.currentId}`
     fetch(deleteUrl, {
       method: 'DELETE',
       headers: {
@@ -52,7 +49,6 @@ class Favs extends React.Component {
       aux.splice(this.state.currentIndex, 1)
       this.setState({
         list: aux,
-        currentId: null,
         currentIndex: null
       })
     })
@@ -61,7 +57,7 @@ class Favs extends React.Component {
 
   render() {
     if (this.state.list.length === 0) {
-      return <h1>You dont have favorites yet!</h1>
+      return <h1>You don't have favorites yet!</h1>
     }
 
     return (

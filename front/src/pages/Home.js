@@ -1,8 +1,8 @@
-import React from 'react'
-import './Home.css'
-import closeIcon from '../resources/close-24px.svg'
-import favoriteIcon from '../resources/favorite_border-24px.svg'
-import favoriteFilledIcon from '../resources/favorite-24px.svg'
+import React from 'react';
+import '../pages/Home.css';
+import closeIcon from '../resources/close-24px.svg';
+import favoriteIcon from '../resources/favorite_border-24px.svg';
+import favoriteFilledIcon from '../resources/favorite-24px.svg';
 
 const Home = (props) => {
   if (!props.currentImage) {
@@ -18,10 +18,10 @@ const Home = (props) => {
       </div>
 
       <div className="Button__container">
-        <div className="Button__item" onClick={props.onDelete}>
+        <div id="deleteBtn" className="Button__item" onClick={props.onDelete}>
           <img alt="love icon" src={closeIcon} />
         </div>
-        <div className="Button__item" onClick={props.onLike}>
+        <div id="likeBtn" className="Button__item" onClick={props.onLike}>
           <img alt="love icon" src={props.iconFilled ? favoriteFilledIcon : favoriteIcon} />
         </div>
       </div>
@@ -29,4 +29,4 @@ const Home = (props) => {
   )
 }
 
-export default Home
+export default Home;
