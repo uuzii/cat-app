@@ -36,3 +36,8 @@ You can navigate between the following two pages:
     /
     /favs
 
+### Test the app
+
+Run the unit tests with this command:
+
+    npm run test
